@@ -1,0 +1,45 @@
+._0 {
+  padding: 6px 12px;
+  font-size: 34.333333333333336px;
+  line-height: 1.5;
+  cursor: pointer;
+  border: 1px solid #2e6da4;
+  border-radius: 4px;
+  color: #fff;
+  background-color: #337ab7;
+}
+._0:focus {
+  color: #fff;
+  background-color: #286090;
+  border-color: #122b40;
+}
+._0[disabled] {
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.65;
+  pointer-events: none;
+}
+@media only screen and (max-width: 640px) {
+  ._0 {
+    display: block;
+    width: 100%;
+  }
+}
+._1 {
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 6px;
+}
+._2 {
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+._3 {
+  display: block;
+  width: 100%;
+}

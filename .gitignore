@@ -1,0 +1,6 @@
+/lib
+/node_modules
+/tmp
+
+/example/node_modules
+/example/_build

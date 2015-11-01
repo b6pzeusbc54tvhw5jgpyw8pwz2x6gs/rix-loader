@@ -1,0 +1,18 @@
+{
+  "name": "rix-loader",
+  "version": "0.1.1",
+  "description": "react inline loader for webpack",
+  "main": "index.js",
+  "author": "Alfred UC",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/b6pzeusbc54tvhw5jgpyw8pwz2x6gs/rix-loader.git"
+  },
+  "dependencies": {
+    "babel-core": "^5.8.33",
+    "loader-utils": "^0.2.11",
+    "mkdirp": "^0.5.1",
+    "react-inline-for-rix-loader": "^0.1.1"
+  }
+}
