@@ -8,11 +8,14 @@ var babel = require("babel-core");
 var mkdirp = require('mkdirp');
 //require("babel-core/register");
 
+var cssFileList = [];
+
 function getRixOption( that, rixContext, query ) {
 
 	var fileName = path.basename( that.resourcePath );
+	console.log( fileName );
 	var option = {
-		filename: query.filename,
+		filename: fileName,
 		vendorPrefixes: query.vendorPrefixes,
 		minify: query.minify,
 		compressClassNames: query.compressClassNames || false,
@@ -27,12 +30,25 @@ function getRixOption( that, rixContext, query ) {
 
 function extractCss( that, css, query ) {
 
+	if( !css ) return;
+
 	var fileName = path.basename( that.resourcePath );
 	var extName = path.extname( fileName );
 	var reg = new RegExp( extName + '$' );
-	var cssDir = path.join( that._compiler.context, query.cssdir || '__css__' );
+	var cssDir = path.join( that._compiler.context, query.cssDir || '__css__' );
 	var cssFileName = fileName.replace( reg, '.rix.css' );
 	var cssFilePath = path.join( cssDir, cssFileName );
+
+	if( cssFileList.indexOf( cssFileName ) < 0 ) {
+		cssFileList.push( cssFileName );
+		
+		var content = cssFileList.map( function( cssFile ) {
+			return "require('"+cssFile+"');";
+		});
+		content = content.join('\n');
+		var cssEntryFilePath = path.join( cssDir, query.cssEntryFile );
+		fs.writeFileSync( cssEntryFilePath, content );
+	}
 	
 	// extract css
 	mkdirp( path.dirname( cssFilePath ), function (err) {

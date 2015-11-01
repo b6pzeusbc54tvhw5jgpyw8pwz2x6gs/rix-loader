@@ -4,8 +4,8 @@ import StyleSheet from 'react-inline-for-rix-loader';
 import cx from 'classnames';
 
 require('requirish')._(module);
-//var SuperButton = require('src/other/SuperButton');
-//var appUtil = require('src/appUtil');
+var SuperButton = require('src/other/SuperButton');
+var appUtil = require('src/appUtil');
 
 //import SuperButton from './src/other/SuperButton';
 //import appUtil from './src/appUtil';
@@ -18,7 +18,7 @@ class Button extends React.Component {
     const { size, busy, block, className } = this.props;
     const classes = cx(styles.default, styles[size], block && styles.block, className);
 
-    return <button {...this.props} className={classes} disabled={busy} />;
+    return <button {...this.props} className={classes} disabled={busy} >aa</button>;
   }
 }
 
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     lineHeight: 1.5,
     cursor: 'pointer',
     border: '1px solid #2e6da4',
-    borderRadius: 4,
+    borderRadius: 40,
     color: '#fff',
     backgroundColor: '#337ab7',
 
