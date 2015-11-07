@@ -1,4 +1,7 @@
-## 0.2.1
+## 0.2.3
+fix extract process
+
+## 0.2.2
 fix example, add .babelrc
 
 ## 0.2.1
