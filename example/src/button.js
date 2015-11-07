@@ -1,11 +1,10 @@
 import React from 'react';
-import StyleSheet from 'react-inline-for-rix-loader';
-//var StyleSheet = require('react-inline-for-rix-loader');
+import StyleSheet from 'react-inline';
 import cx from 'classnames';
 
-require('requirish')._(module);
-var SuperButton = require('src/other/SuperButton');
-var appUtil = require('src/appUtil');
+//require('requirish')._(module);
+//var SuperButton = require('src/other/SuperButton');
+//var appUtil = require('src/appUtil');
 
 //import SuperButton from './src/other/SuperButton';
 //import appUtil from './src/appUtil';
@@ -18,7 +17,7 @@ class Button extends React.Component {
     const { size, busy, block, className } = this.props;
     const classes = cx(styles.default, styles[size], block && styles.block, className);
 
-    return <button {...this.props} className={classes} disabled={busy} >aa</button>;
+    return <button {...this.props} className={classes} disabled={busy} >adda</button>;
   }
 }
 
@@ -33,10 +32,10 @@ export function rixContext() {
 	// 
 	var a = 33;
 	var b = 44;
-	return { size: a+b / a };
+	return { size: a+b / a, lineHeight: a+"px" };
 };
 
-const { size } = rixContext();
+const { size, lineHeight } = rixContext();
 
 	//rixContext: function() {
 //
@@ -47,7 +46,7 @@ const styles = StyleSheet.create({
   default: {
     padding: '6px 12px',
     fontSize: size,
-    lineHeight: 1.5,
+    lineHeight: lineHeight,
     cursor: 'pointer',
     border: '1px solid #2e6da4',
     borderRadius: 40,

@@ -1,5 +1,5 @@
 import React from 'react';
-import StyleSheet from 'react-inline-for-rix-loader';
+import StyleSheet from 'react-inline';
 
 require('requirish')._(module);
 var appUtil = require('src/appUtil');

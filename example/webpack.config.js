@@ -23,6 +23,7 @@ function plugins() {
 		__PRODUCTION__: JSON.stringify( argv.prdbuild ? true : false ),
 		__IS_WEBPACK__: JSON.stringify( true )
 	}),
+	new webpack.HotModuleReplacementPlugin(),
 	new ExtractTextPlugin( cssBundleFile )
   ];
 
@@ -55,9 +56,14 @@ var clientConfig = {
 
   context: path.join( __dirname, SRC_DIR ),
   entry: {
-	  //javascript: './button.js',
+	  javascript: './button.js',
 	  css: path.join( cssDir, cssEntryFile )
   },
+  //entry: [
+	  //'webpack-dev-server/client?http://localhost:3000',
+	  //'webpack/hot/only-dev-server',
+	  //'./src/button'
+  //],
 
   output: {
     filename: 'bundle.js',
@@ -73,10 +79,11 @@ var clientConfig = {
 	loaders: [
 		{
 			test: /\.js$/,
-			loaders: [
-				"babel-loader",
-				"rix-loader?cssDir="+cssDir+"&cssEntryFile="+cssEntryFile
-			],
+			loaders: ["react-hot","babel"],
+			//loaders: [
+				//"babel?presets[]=es2015",
+				//"rix-loader?cssDir="+cssDir+"&cssEntryFile="+cssEntryFile
+			//],
 			exclude: /node_modules/
 		},
 

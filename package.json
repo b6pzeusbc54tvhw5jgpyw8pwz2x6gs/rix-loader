@@ -13,6 +13,7 @@
     "babel-core": "^6.1.2",
     "loader-utils": "^0.2.11",
     "mkdirp": "^0.5.1",
-    "react-inline": "^0.8.1"
+    "react-inline": "^0.8.1",
+    "rix-loader": "^0.2.1"
   }
 }
