@@ -1,4 +1,7 @@
 ## 0.2.1
+fix example, add .babelrc
+
+## 0.2.1
 remove the react-inline-for-rix-loader dependency.
 
 ## 0.2.0
