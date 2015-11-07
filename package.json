@@ -1,6 +1,6 @@
 {
   "name": "rix-loader",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "react inline loader for webpack",
   "main": "index.js",
   "author": "Alfred UC",

@@ -1,3 +1,6 @@
+## 0.2.4
+handle exception
+
 ## 0.2.3
 fix extract process
 

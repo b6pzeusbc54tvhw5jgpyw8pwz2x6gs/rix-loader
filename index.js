@@ -103,7 +103,11 @@ module.exports = function( content, sourceMap ) {
 		var option = getRixOption( this, rixContext, query );
 
 		Extractor.transformFile( this.resourcePath, option, function( err, result ) {
-			if( err ) { console.error( err ); throw err; }
+			if( err ) {
+				console.error( err );
+				this.callback( null, (result || {}).code, sourceMap );
+				return;
+			}
 
 			this.callback( null, result.code, sourceMap );
 			extractCss( this, result.css, query );
