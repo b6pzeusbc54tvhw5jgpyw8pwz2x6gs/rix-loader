@@ -79,11 +79,11 @@ var clientConfig = {
 	loaders: [
 		{
 			test: /\.js$/,
-			loaders: ["react-hot","babel"],
-			//loaders: [
-				//"babel?presets[]=es2015",
-				//"rix-loader?cssDir="+cssDir+"&cssEntryFile="+cssEntryFile
-			//],
+			//loaders: ["react-hot","babel"],
+			loaders: [
+				"babel",
+				"rix-loader?cssDir="+cssDir+"&cssEntryFile="+cssEntryFile
+			],
 			exclude: /node_modules/
 		},
 

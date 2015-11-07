@@ -90,7 +90,7 @@ module.exports = function( content, sourceMap ) {
 			var codeList = content.split('\n');
 			codeList = codeList.splice( start, end-start+1 );
 			var contextCode = codeList.join('\n');
-			var reBabel = babel.transform( contextCode, { ast: false });
+			var reBabel = babel.transform( contextCode, { ast: false, presets: ["es2015"] });
 			onlyContextExport = this.exec( reBabel.code );
 
 		}.bind(this));
