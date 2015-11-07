@@ -1,6 +1,5 @@
 var loaderUtils = require("loader-utils");
-//var Extractor = require('react-inline/extractor');
-var Extractor = require('react-inline-for-rix-loader/extractor');
+var Extractor = require('react-inline/extractor');
 //var util = require('util');
 var path = require('path');
 var fs = require('fs');

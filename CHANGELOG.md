@@ -1,3 +1,5 @@
+## 0.2.1
+remove the react-inline-for-rix-loader dependency.
 
 ## 0.2.0
 upgrade dependency to react-inline version 0.8.1!!
