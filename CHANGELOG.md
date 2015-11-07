@@ -1,3 +1,9 @@
+
+## 0.2.0
+upgrade dependency to react-inline version 0.8.1!!
+upgrade dependency to babel version 6 !!
+
+
 ## 0.1.3
 webpack.config.js 개선 - webpack 에서 css 파일 번들도 동시에 지원.
 

@@ -55,7 +55,7 @@ var clientConfig = {
 
   context: path.join( __dirname, SRC_DIR ),
   entry: {
-	  javascript: './button.js',
+	  //javascript: './button.js',
 	  css: path.join( cssDir, cssEntryFile )
   },
 
@@ -80,7 +80,7 @@ var clientConfig = {
 			exclude: /node_modules/
 		},
 
-		{ test: /\.html$/, loader: "file?name=[name].[ext]" },
+		//{ test: /\.html$/, loader: "file?name=[name].[ext]" },
 		{ test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader","css-loader") }
 	]
   },

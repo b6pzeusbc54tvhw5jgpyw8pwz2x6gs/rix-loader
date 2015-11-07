@@ -11,10 +11,10 @@
     "yargs": "^3.29.0"
   },
   "dependencies": {
-    "react-inline-for-rix-loader": "latest",
-    "rix-loader": "latest",
     "classnames": "^2.2.0",
-    "react": "^0.14.1"
+    "react": "^0.14.1",
+    "react-inline": "^0.7.0",
+    "rix-loader": "latest"
   },
   "browser": {
     "requirish": "src/fakeRequirish.js"
