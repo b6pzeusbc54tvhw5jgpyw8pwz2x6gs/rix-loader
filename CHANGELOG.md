@@ -1,3 +1,6 @@
+## 0.3.0
+version down the babel-core for use in react-transform-boilerplate
+
 ## 0.2.4
 handle exception
 

@@ -34,7 +34,9 @@ function extractCss( that, css, query ) {
 	var fileName = path.basename( that.resourcePath );
 	var extName = path.extname( fileName );
 	var reg = new RegExp( extName + '$' );
-	var cssDir = path.join( that._compiler.context, query.cssDir || '__css__' );
+
+	//console.log( this._compilation.compiler.context );
+	var cssDir = path.join( that._compilation.compiler.context, query.cssDir || '__css__' );
 	var cssFileName = fileName.replace( reg, '.rix.css' );
 	var cssFilePath = path.join( cssDir, cssFileName );
 
@@ -42,9 +44,10 @@ function extractCss( that, css, query ) {
 		cssFileList.push( cssFileName );
 		
 		var content = cssFileList.map( function( cssFile ) {
-			return "require('"+cssFile+"');";
+			return "require('./"+cssFile+"');";
 		});
 		content = content.join('\n');
+		mkdirp.sync( cssDir );
 		var cssEntryFilePath = path.join( cssDir, query.cssEntryFile );
 		fs.writeFileSync( cssEntryFilePath, content );
 	}
@@ -90,7 +93,8 @@ module.exports = function( content, sourceMap ) {
 			var codeList = content.split('\n');
 			codeList = codeList.splice( start, end-start+1 );
 			var contextCode = codeList.join('\n');
-			var reBabel = babel.transform( contextCode, { ast: false, presets: ["es2015"] });
+			//var reBabel = babel.transform( contextCode, { ast: false, presets: ["es2015"] });
+			var reBabel = babel.transform( contextCode, { ast: false });
 			onlyContextExport = this.exec( reBabel.code );
 
 		}.bind(this));
